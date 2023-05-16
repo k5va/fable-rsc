@@ -7,7 +7,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "db-seed": "NODE_ENV=development prisma db seed"
+    "db-seed": "NODE_ENV=development prisma db seed",
+    "db-push": "npx prisma db push",
+    "prisma-studio": "npx prisma studio"
+  },
+  "prisma": {
+    "seed": "npx tsx prisma/seed.ts"
   },
   "dependencies": {
     "@prisma/client": "^4.14.0",
