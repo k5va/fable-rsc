@@ -1,4 +1,4 @@
-import { z } from "zod";
+import { z } from 'zod';
 import {
   ORDER_DELIVERIES,
   ORDER_MAX_ADDRESS_LENGTH,
@@ -10,8 +10,8 @@ import {
   ORDER_MAX_PHONE_LENGTH,
   ORDER_MIN_FIELD_LENGTH,
   ORDER_PAYMENTS,
-} from "~/const";
-import { productOrderSchema } from "./product-order.schema";
+} from '@/const';
+import { productOrderSchema } from './product-order.schema';
 
 export const orderSchema = z.object({
   id: z.string(),

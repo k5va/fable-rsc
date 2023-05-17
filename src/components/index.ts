@@ -9,3 +9,7 @@ export * from './footer/footer';
 export * from './subcribe/subscribe';
 export * from './ui/button/button';
 export * from './ui/text-field/text-field';
+export * from './collections/collections';
+export * from './collection-products/collection-products';
+export * from './category-products/category-products';
+export * from './product-card/product-card';
