@@ -14,3 +14,4 @@ export * from './collection-products/collection-products';
 export * from './category-products/category-products';
 export * from './product-card/product-card';
 export * from './spinner/spinner';
+export * from './ui/select/select';

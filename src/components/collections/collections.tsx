@@ -1,5 +1,6 @@
 import { CollectionProducts, Container } from '@/components';
 import { fetchCollections } from '@/api';
+import { SortingSelect } from './ui/sorting-select';
 import React from 'react';
 
 export const Collections = async () => {
@@ -10,8 +11,7 @@ export const Collections = async () => {
       <section className="relative mb-20">
         <h2 className="sr-only">Fable store collections</h2>
         <div className="relative top-24 flex justify-end small:top-20">
-          {/* <SortingSelect /> */}
-          Select sorting
+          <SortingSelect />
         </div>
         <ul>
           {collections.map((collection) => (

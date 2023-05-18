@@ -1,8 +1,10 @@
+'use client';
+
 import { FC } from 'react';
 import { ProductCard } from '@/components';
 import { Category, Product } from '@/types';
 import { filterProductsByCategory, sortProducts } from '@/utils';
-import { ProductSorting } from '@/const';
+import { useSorting } from '@/store';
 
 type CategoryProductsProps = {
   category: Category;
@@ -13,7 +15,7 @@ export const CategoryProducts: FC<CategoryProductsProps> = ({
   category,
   products,
 }) => {
-  const sorting = ProductSorting.New;
+  const sorting = useSorting((state) => state.sorting);
   const categoryProducts = sortProducts(
     sorting,
     filterProductsByCategory(category, products)
