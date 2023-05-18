@@ -29,34 +29,33 @@ type TextFieldProps = InputHTMLAttributes<HTMLInputElement> &
     error?: string;
   };
 
-export const TextField = forwardRef(function TextField(
-  { label, intent, error, ...inputProps }: TextFieldProps,
-  ref: ForwardedRef<HTMLInputElement>
-) {
-  const inputId = useId();
-  const errorId = useId();
+export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
+  function TextField({ label, intent, error, ...inputProps }, ref) {
+    const inputId = useId();
+    const errorId = useId();
 
-  return (
-    <div className="flex w-full flex-col flex-nowrap gap-2">
-      {label && (
-        <label className="text-base" htmlFor={inputId}>
-          {label}
-        </label>
-      )}
-      <input
-        id={inputId}
-        className={textFieldStyles({ intent })}
-        ref={ref}
-        aria-label={label || inputProps.name}
-        aria-errormessage={errorId}
-        aria-invalid={intent === 'error'}
-        {...inputProps}
-      />
-      {error && (
-        <p id={errorId} className="text-xs text-alert" role="alert">
-          {error}
-        </p>
-      )}
-    </div>
-  );
-});
+    return (
+      <div className="flex w-full flex-col flex-nowrap gap-2">
+        {label && (
+          <label className="text-base" htmlFor={inputId}>
+            {label}
+          </label>
+        )}
+        <input
+          id={inputId}
+          className={textFieldStyles({ intent })}
+          ref={ref}
+          aria-label={label || inputProps.name}
+          aria-errormessage={errorId}
+          aria-invalid={intent === 'error'}
+          {...inputProps}
+        />
+        {error && (
+          <p id={errorId} className="text-xs text-alert" role="alert">
+            {error}
+          </p>
+        )}
+      </div>
+    );
+  }
+);

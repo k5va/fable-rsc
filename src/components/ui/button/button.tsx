@@ -1,8 +1,8 @@
 'use client';
 
-import { FC, PropsWithChildren } from 'react';
+import { FC, forwardRef } from 'react';
 import { cva, VariantProps } from 'class-variance-authority';
-import { motion } from 'framer-motion';
+import { HTMLMotionProps, motion } from 'framer-motion';
 
 const buttonStyles = cva(
   'text-xl py-2 px-10 cursor-pointer border border-solid',
@@ -31,17 +31,23 @@ const buttonStyles = cva(
   }
 );
 
-type ButtonProps = PropsWithChildren<VariantProps<typeof buttonStyles>>;
+type ButtonProps = HTMLMotionProps<'button'> &
+  VariantProps<typeof buttonStyles>;
 
-export const Button: FC<ButtonProps> = ({ children, intent, width, shape }) => {
+export const Button: FC<ButtonProps> = forwardRef<
+  HTMLButtonElement,
+  ButtonProps
+>(function Button({ children, intent, width, shape, ...props }, ref) {
   return (
     <motion.button
+      ref={ref}
       whileHover={intent !== 'disabled' ? { scale: 1.01 } : undefined}
       whileTap={intent !== 'disabled' ? { opacity: [1, 0.2, 1] } : undefined}
       className={buttonStyles({ intent, width, shape })}
       disabled={intent === 'disabled'}
+      {...props}
     >
       {children}
     </motion.button>
   );
-};
+});
