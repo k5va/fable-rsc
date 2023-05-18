@@ -13,3 +13,4 @@ export * from './collections/collections';
 export * from './collection-products/collection-products';
 export * from './category-products/category-products';
 export * from './product-card/product-card';
+export * from './spinner/spinner';
