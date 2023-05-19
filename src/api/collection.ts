@@ -1,27 +1,14 @@
 import { collectionSchema } from '@/schema';
 import { Collection } from '@/types';
-import { ApiRoute, BACKEND_URL } from './api.const';
+import { ApiRoute } from './api.const';
+import { get } from './api';
 
 export async function fetchCollections(): Promise<Collection[]> {
-  const response = await fetch(`${BACKEND_URL}/${ApiRoute.COLLECTION}`);
-  if (!response.ok) {
-    console.log(response.status, response.statusText);
-
-    throw new Error('Failed to fetch collections');
-  }
-  const data = await response.json();
-
+  const data = await get(ApiRoute.COLLECTION);
   return collectionSchema.array().parseAsync(data);
 }
 
 export async function fetchCollection(id: string): Promise<Collection> {
-  const response = await fetch(`${BACKEND_URL}/${ApiRoute.COLLECTION}/${id}`);
-  if (!response.ok) {
-    console.log(response.status, response.statusText);
-
-    throw new Error('Failed to fetch collection');
-  }
-  const data = await response.json();
-
+  const data = await get(`${ApiRoute.COLLECTION}/${id}`);
   return collectionSchema.parseAsync(data);
 }
