@@ -10,6 +10,7 @@ const waitWithError = () =>
   );
 
 export async function fetchProducts(ids: string[] = []): Promise<Product[]> {
+  await wait();
   const data = await get(
     `${ApiRoute.PRODUCT}${ids ? `?${ids.join(',')}` : ''}`
   );

@@ -3,7 +3,7 @@ import { Container, MainNavigation } from '@/components';
 
 export const Header: FC = () => {
   return (
-    <header>
+    <header className="bg-slate-50">
       <Container>
         <MainNavigation />
       </Container>
