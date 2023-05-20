@@ -12,3 +12,5 @@ export * from './create-product-order.type';
 export * from './sort.type';
 export * from './favorite-product.type';
 export * from './product-list.type';
+export * from './product-color.type';
+export * from './product-size.type';

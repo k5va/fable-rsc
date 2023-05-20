@@ -1,11 +1,11 @@
-import { Collections } from '@/components';
+import { Collections, Container } from '@/components';
 
 export default function Home() {
   return (
-    <>
+    <Container>
       <h1 className="sr-only">Fable internet store</h1>
       {/* @ts-expect-error - react server component*/}
       <Collections />
-    </>
+    </Container>
   );
 }
