@@ -1,7 +1,7 @@
-import { Footer, Header } from '@/components';
 import { Inter } from 'next/font/google';
-import './globals.css';
 import clsx from 'clsx';
+import { Footer, Header } from '@/components';
+import './globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -20,7 +20,7 @@ export default function RootLayout({
       <body
         className={clsx(
           inter.className,
-          'h-screen grid grid-cols-1, grid-rows-[auto,1fr,auto]'
+          'min-h-screen grid grid-cols-1, grid-rows-[auto,1fr,auto]'
         )}
       >
         <Header />
