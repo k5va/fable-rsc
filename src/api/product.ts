@@ -18,6 +18,7 @@ export async function fetchProducts(ids: string[] = []): Promise<Product[]> {
 }
 
 export async function fetchProduct(id: string): Promise<Product> {
+  await wait();
   const data = await get(`${ApiRoute.PRODUCT}/${id}`);
   return productSchema.parseAsync(data);
 }
