@@ -1,10 +1,5 @@
+import { forwardRef, useId, InputHTMLAttributes } from 'react';
 import { cva, VariantProps } from 'class-variance-authority';
-import {
-  type ForwardedRef,
-  forwardRef,
-  useId,
-  InputHTMLAttributes,
-} from 'react';
 
 const textFieldStyles = cva(
   'focus:shadow-outline w-full border border-solid py-3 px-4 text-xl outline-none',

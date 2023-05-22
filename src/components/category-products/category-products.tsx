@@ -1,7 +1,7 @@
 'use client';
 
 import { FC } from 'react';
-import { ProductCard } from '@/components';
+import { ProductCard } from '@/components/product-card/product-card';
 import { Category, Product } from '@/types';
 import { filterProductsByCategory, sortProducts } from '@/utils';
 import { useSorting } from '@/store';

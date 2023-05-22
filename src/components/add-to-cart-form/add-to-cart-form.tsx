@@ -1,7 +1,9 @@
 'use client';
 
 import React, { FC, FormEventHandler, useState } from 'react';
-import { Button, ColorPicker, SizePicker } from '@/components';
+import { Button } from '@/components/ui/button/button';
+import { ColorPicker } from '@/components/color-picker/color-picker';
+import { SizePicker } from '@/components/size-picker/size-picker';
 import { Product, ProductColor, ProductSize } from '@/types';
 import {
   DEFAULT_PRODUCT_COLOR,

@@ -1,10 +1,9 @@
-import { CollectionProducts } from '@/components';
-import { fetchCollections } from '@/api';
+import { CollectionProducts } from '@/components/collection-products/collection-products';
 import { SortingSelect } from './ui/sorting-select';
-import React from 'react';
+import { getCollections } from '@/services';
 
 export const Collections = async () => {
-  const collections = await fetchCollections();
+  const collections = await getCollections();
 
   return (
     <section className="relative mb-20">

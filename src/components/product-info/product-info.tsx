@@ -1,7 +1,8 @@
 'use client';
 
 import { FC } from 'react';
-import { Accordion, Tabs } from '@/components';
+import { Accordion } from '@/components/ui/accordion/accordion';
+import { Tabs } from '@/components/ui/tabs/tabs';
 
 export const ProductInfo: FC = () => {
   const descriptionText = `Jacket made of a loose fit makes the product a universal element of the upper layer. 

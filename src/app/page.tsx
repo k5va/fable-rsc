@@ -1,4 +1,5 @@
-import { Collections, Container } from '@/components';
+import { Container } from '@/components/container/container';
+import { Collections } from '@/components/collections/collections';
 
 export default function Home() {
   return (

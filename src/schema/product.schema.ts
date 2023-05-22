@@ -1,7 +1,7 @@
-import { z } from "zod";
-import { categorySchema } from "./category.schema";
-import { collectionSchema } from "./collection.schema";
-import { imageSchema } from "./image.schema";
+import { z } from 'zod';
+import { categorySchema } from './category.schema';
+import { collectionSchema } from './collection.schema';
+import { imageSchema } from './image.schema';
 
 export const productSchema = z.object({
   id: z.string(),
@@ -15,5 +15,5 @@ export const productSchema = z.object({
   collection: collectionSchema.optional(),
   categoryId: z.string(),
   category: categorySchema.optional(),
-  registerDate: z.string(),
+  registerDate: z.date(),
 });

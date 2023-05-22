@@ -1,5 +1,7 @@
 import { FC } from 'react';
-import { Container, ProductCardSkeleton, Skeleton } from '@/components';
+import { Container } from '@/components/container/container';
+import { ProductCardSkeleton } from '@/components/product-card/product-card-skeleton';
+import { Skeleton } from '@/components/ui/skeleton/skeleton';
 
 const DEFAULT_PRODUCTS_COUNT = 6;
 

@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Skeleton } from '@/components';
+import { Skeleton } from '@/components/ui/skeleton/skeleton';
 
 export const ProductCardSkeleton: FC = () => {
   return (
