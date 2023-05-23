@@ -1,5 +1,8 @@
 import React from 'react';
-import { Container, SiteMenu, Socials, Subscribe } from '@/components';
+import { Container } from '@/components/container/container';
+import { SiteMenu } from '@/components/site-menu/site-menu';
+import { Socials } from '@/components/socials/socials';
+import { Subscribe } from '@/components/subcribe/subscribe';
 
 export function Footer(): JSX.Element {
   return (

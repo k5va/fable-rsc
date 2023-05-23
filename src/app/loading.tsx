@@ -1,4 +1,4 @@
-import { CollectionsSkeleton } from '@/components';
+import { CollectionsSkeleton } from '@/components/collections/collections-skeleton';
 
 export default function Loading() {
   return <CollectionsSkeleton />;

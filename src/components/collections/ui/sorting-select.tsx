@@ -3,7 +3,7 @@
 import { FC } from 'react';
 import { ProductSortingType } from '@/types';
 import { productSortingList } from '@/const';
-import { Select } from '@/components';
+import { Select } from '@/components/ui/select/select';
 import { useSorting } from '@/store';
 
 export const SortingSelect: FC = () => {

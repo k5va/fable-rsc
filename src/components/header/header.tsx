@@ -1,5 +1,6 @@
 import { FC } from 'react';
-import { Container, MainNavigation } from '@/components';
+import { Container } from '@/components/container/container';
+import { MainNavigation } from '@/components/main-navigation/main-navigation';
 
 export const Header: FC = () => {
   return (

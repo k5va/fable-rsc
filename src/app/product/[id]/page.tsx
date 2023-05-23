@@ -1,5 +1,6 @@
-import { fetchProduct } from '@/api';
-import { Container, ProductCardFull } from '@/components';
+import { Container } from '@/components/container/container';
+import { ProductCardFull } from '@/components/product-card-full/product-card-full';
+import { getProduct } from '@/services';
 
 type ProductPageProps = {
   params: {
@@ -8,7 +9,7 @@ type ProductPageProps = {
 };
 
 export default async function Product({ params: { id } }: ProductPageProps) {
-  const product = await fetchProduct(id);
+  const product = await getProduct(id);
 
   return (
     <Container>

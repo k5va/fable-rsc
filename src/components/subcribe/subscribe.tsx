@@ -1,5 +1,6 @@
 import { FC } from 'react';
-import { Button, TextField } from '@/components';
+import { Button } from '@/components/ui/button/button';
+import { TextField } from '@/components/ui/text-field/text-field';
 
 export const Subscribe: FC = () => {
   return (

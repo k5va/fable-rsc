@@ -1,19 +1,21 @@
 import { FC } from 'react';
-import { CategoryProducts } from '@/components';
+import { CategoryProducts } from '@/components/category-products/category-products';
 import { Collection } from '@/types';
-import { fetchCategories, fetchProducts } from '@/api';
 import { filterProductsByCollection } from '@/utils';
+import { getCategories, getProducts } from '@/services';
 
 type CollectionProductsProps = {
   collection: Collection;
 };
 
-//@ts-expect-error - react server component
+//@ts-expect-error Async Server Component
 export const CollectionProducts: FC<CollectionProductsProps> = async ({
   collection,
 }) => {
-  const categories = await fetchCategories();
-  const products = await fetchProducts();
+  const [categories, products] = await Promise.all([
+    getCategories(),
+    getProducts(),
+  ]);
 
   const collectionProducts = filterProductsByCollection(collection, products);
 

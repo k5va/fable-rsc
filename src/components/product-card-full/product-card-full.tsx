@@ -1,11 +1,9 @@
 import { FC } from 'react';
 import Image from 'next/image';
-import {
-  Carousel,
-  AddToCartForm,
-  ProductInfo,
-  ProductBreadcrumbs,
-} from '@/components';
+import { Carousel } from '@/components/ui/carousel/carousel';
+import { AddToCartForm } from '@/components/add-to-cart-form/add-to-cart-form';
+import { ProductInfo } from '@/components/product-info/product-info';
+import { ProductBreadcrumbs } from '@/components/product-breadcrumbs/product-breadcrumbs';
 import { Product } from '@/types';
 
 const PRODUCT_IMAGES_RATIO = 0.96;
