@@ -13,7 +13,7 @@ export default async function Product({ params: { id } }: ProductPageProps) {
 
   return (
     <Container>
-      <h1 className="sr-only">Product page {product.name}</h1>
+      <h2 className="sr-only">Product page {product.name}</h2>
       <ProductCardFull product={product} />;
     </Container>
   );

@@ -1,3 +1,5 @@
+'use client';
+
 import { forwardRef, useId, InputHTMLAttributes } from 'react';
 import { cva, VariantProps } from 'class-variance-authority';
 
