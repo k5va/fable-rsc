@@ -9,7 +9,7 @@ export function sortProducts(
     case ProductSorting.New:
       return [...products].sort(
         ({ registerDate: date1 }, { registerDate: date2 }) =>
-          Date.parse(date1) - Date.parse(date2)
+          date1.getTime() - date2.getTime()
       );
     case ProductSorting.Price:
       return [...products].sort(
