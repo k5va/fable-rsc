@@ -4,11 +4,13 @@ import { ApiRoute } from './api.const';
 import { get, post } from './api';
 
 export async function fetchOrders(sort: Sorting = 'desc'): Promise<Order[]> {
-  const { data } = await get(`${ApiRoute.ORDER}?sort=${sort}`);
+  const data = await get(`${ApiRoute.ORDER}?sort=${sort}`);
+  console.log('fetched orders', data);
+
   return orderSchema.array().parseAsync(data);
 }
 
 export async function createOrder(order: CreateOrder): Promise<Order> {
-  const { data } = await post(`${ApiRoute.ORDER}`, order);
+  const data = await post(`${ApiRoute.ORDER}`, order);
   return orderSchema.parseAsync(data);
 }

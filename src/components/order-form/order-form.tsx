@@ -52,7 +52,7 @@ export const OrderForm: FC = () => {
             small:w-full"
         >
           <Legend text="City" />
-          <TextField error={errors.city?.message} />
+          <TextField {...register('city')} error={errors.city?.message} />
         </fieldset>
 
         {/* Delivery */}
