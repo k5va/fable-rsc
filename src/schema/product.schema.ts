@@ -15,5 +15,5 @@ export const productSchema = z.object({
   collection: collectionSchema.optional(),
   categoryId: z.string(),
   category: categorySchema.optional(),
-  registerDate: z.date(),
+  registerDate: z.coerce.date(),
 });
