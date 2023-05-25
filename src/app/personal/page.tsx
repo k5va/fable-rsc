@@ -1,14 +1,18 @@
+import { z } from 'zod';
 import { Container } from '@/components/container/container';
 import { OrderList } from '@/components/order-list/order-list';
 import { getOrders } from '@/services';
-import { z } from 'zod';
 
 // TODO: make zod schema
 const searchParamsSchema = z.object({
   sort: z.enum(['asc', 'desc']).optional(),
 });
 
-export default async function Home({ searchParams }: { searchParams: string }) {
+type PersonalPageProps = {
+  searchParams: string;
+};
+
+export default async function Personal({ searchParams }: PersonalPageProps) {
   const { sort = 'desc' } = await searchParamsSchema.parseAsync(searchParams);
   const orders = await getOrders(sort);
 
