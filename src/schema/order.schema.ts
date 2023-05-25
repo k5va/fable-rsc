@@ -24,6 +24,6 @@ export const orderSchema = z.object({
   email: z.string().email().max(ORDER_MAX_EMAIL_LENGTH),
   payment: z.enum(ORDER_PAYMENTS),
   comment: z.string().max(ORDER_MAX_COMMENT_LENGTH).optional(),
-  createdAt: z.string(),
+  createdAt: z.coerce.date(),
   productOrders: z.array(productOrderSchema),
 });
