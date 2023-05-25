@@ -1,12 +1,8 @@
-'use client';
-
 import { FC } from 'react';
 import { Order, Sorting } from '@/types';
 import { OrderData } from '@/components/order-data/order-data';
 import { ProductOrder } from '@/components/product-order/product-order';
 import { OrderSortSelect } from './ui/order-sort-select';
-import { useRouter } from 'next/navigation';
-import { AppRoute } from '@/const';
 
 type OrderListProps = {
   orders: Order[];
@@ -14,15 +10,10 @@ type OrderListProps = {
 };
 
 export const OrderList: FC<OrderListProps> = ({ orders, sorting }) => {
-  const router = useRouter();
-
   return (
     <div className="flex flex-col gap-2">
       <div className="ml-auto">
-        <OrderSortSelect
-          sorting={sorting}
-          onChange={(sort) => router.push(`${AppRoute.PERSONAL}?sort=${sort}`)}
-        />
+        <OrderSortSelect sorting={sorting} />
       </div>
       <ul className="flex flex-col gap-4">
         {orders.map((order) => (

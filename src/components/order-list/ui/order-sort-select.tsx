@@ -1,24 +1,26 @@
 'use client';
 
 import { FC } from 'react';
+import { useRouter } from 'next/navigation';
 import { Sorting } from '@/types';
 import { Select } from '@/components/ui/select/select';
+import { AppRoute } from '@/const';
 
 type OrderSortSelectProps = {
   sorting: Sorting;
-  onChange: (value: Sorting) => void;
 };
 
-export const OrderSortSelect: FC<OrderSortSelectProps> = ({
-  sorting,
-  onChange,
-}) => {
+export const OrderSortSelect: FC<OrderSortSelectProps> = ({ sorting }) => {
+  const router = useRouter();
+
   return (
     <div className="flex gap-2 text-2xl small:text-sm">
       Creation date:
       <Select
         value={sorting}
-        onValueChange={(value) => onChange(value as Sorting)}
+        onValueChange={(value) =>
+          router.push(`${AppRoute.PERSONAL}?sort=${value}`)
+        }
       >
         <Select.Menu>
           <Select.MenuItem value="desc">Descending</Select.MenuItem>
