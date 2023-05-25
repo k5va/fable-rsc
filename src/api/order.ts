@@ -1,6 +1,6 @@
 import { orderSchema } from '@/schema';
 import { CreateOrder, Order, Sorting } from '@/types';
-import { ApiRoute, BACKEND_URL } from './api.const';
+import { ApiRoute } from './api.const';
 import { get, post } from './api';
 
 export async function fetchOrders(sort: Sorting = 'desc'): Promise<Order[]> {

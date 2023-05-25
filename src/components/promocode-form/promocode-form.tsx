@@ -1,3 +1,5 @@
+'use client';
+
 import { FC } from 'react';
 import { TextField } from '@/components/ui/text-field/text-field';
 import { Button } from '@/components/ui/button/button';

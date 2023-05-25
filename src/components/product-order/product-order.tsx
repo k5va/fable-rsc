@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import clsx from 'clsx';
 import { BiPlus, BiMinus } from 'react-icons/bi';
-import { useProductOrders } from '@/hooks';
+import { useProductOrders } from '@/hooks/use-product-orders';
 import { ProductOrder as ProductOrderType } from '@/types';
 
 type ProductOrderProps = {

@@ -1,4 +1,4 @@
-import { useAddToOrder } from '@/hooks';
+import { useAddToOrder } from '@/hooks/use-add-to-order';
 import { useOrders } from '@/store';
 
 export const useAddToCart = (productId: string) => {

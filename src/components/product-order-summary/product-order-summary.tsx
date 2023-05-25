@@ -1,7 +1,7 @@
 'use client';
 
 import { FC } from 'react';
-import { useProductOrderSummary } from '@/hooks';
+import { useProductOrderSummary } from '@/hooks/use-product-order-summary';
 
 export const ProductOrderSummary: FC = () => {
   const { summary, delivery, promoCode, total } = useProductOrderSummary();

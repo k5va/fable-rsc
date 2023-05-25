@@ -2,17 +2,17 @@
 
 import { FC, PropsWithChildren, createContext, useContext } from 'react';
 import { ProductOrder } from '@/types';
-import { useEnrichedProductOrders } from '@/hooks';
+import { useEnrichedProductOrders } from '@/hooks/use-enriched-product-orders';
 
 type OrderContextType = {
   productOrders: ProductOrder[];
 };
 
-type OrderContextProviderProps = PropsWithChildren;
-
 const OrderContext = createContext<OrderContextType>({
   productOrders: [],
 });
+
+type OrderContextProviderProps = PropsWithChildren;
 
 export const OrderContextProvider: FC<OrderContextProviderProps> = ({
   children,

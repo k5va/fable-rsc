@@ -3,6 +3,8 @@ import { Product } from '@/types';
 import { ApiRoute } from './api.const';
 import { get } from './api';
 
+//TODO: remove helper functions
+
 const wait = () => new Promise((resolve) => setTimeout(resolve, 2000));
 const waitWithError = () =>
   new Promise((_resolve, reject) =>

@@ -1,4 +1,3 @@
-import { POST } from '@/app/api/auth/[...nextauth]/route';
 import { BACKEND_URL } from './api.const';
 
 export const get = async (url: string) => {
@@ -13,7 +12,7 @@ export const get = async (url: string) => {
 
 export const post = async (url: string, data: unknown) => {
   const response = await fetch(`${BACKEND_URL}/${url}`, {
-    method: POST,
+    method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },

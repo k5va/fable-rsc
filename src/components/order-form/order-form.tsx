@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
-import { RegisterOptions, FormProvider, useForm } from 'react-hook-form';
+'use client';
+
+import { FC, useState } from 'react';
+import { FormProvider, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useSubmitOrder } from '@/hooks';
-import { CreateOrder, Order } from '@/types';
+import { useSubmitOrder } from '@/hooks/use-submit-order';
+import { CreateOrder } from '@/types';
 import { createOrderSchema } from '@/schema';
 import { Legend } from './ui/legend';
 import { TextField } from '@/components/ui/text-field/text-field';
@@ -10,11 +12,6 @@ import { Button } from '@/components/ui/button/button';
 import { RadioButton } from '@/components/ui/radio-button/radio-button';
 import { TextArea } from '@/components/ui/text-area/text-area';
 import { Checkbox } from '@/components/ui/checkbox/checkbox';
-
-type OrderFormValidator = Pick<
-  RegisterOptions<Order>,
-  'required' | 'maxLength' | 'minLength' | 'pattern'
->;
 
 const orderFormDefaults: CreateOrder = {
   city: '',
@@ -29,7 +26,7 @@ const orderFormDefaults: CreateOrder = {
   productOrders: [],
 };
 
-export function OrderForm(): JSX.Element {
+export const OrderForm: FC = () => {
   const [isAgreeOnTerms, setAgreeOnTerms] = useState(false);
   const methods = useForm<CreateOrder>({
     defaultValues: orderFormDefaults,
@@ -142,4 +139,4 @@ export function OrderForm(): JSX.Element {
       </form>
     </FormProvider>
   );
-}
+};
