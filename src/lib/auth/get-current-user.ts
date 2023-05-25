@@ -1,11 +1,10 @@
 import { StatusCodes } from 'http-status-codes';
-import { getServerSession } from 'next-auth/next';
-import { authOptions } from './auth-options';
+import { getServerAuthSession } from './auth-options';
 import { prisma } from '@/db';
 import { ServerError } from '@/utils/server-error';
 
 export const getCurrentUser = async () => {
-  const session = await getServerSession(authOptions);
+  const session = await getServerAuthSession();
 
   if (!session?.user?.email) {
     throw new ServerError('Not signed in', StatusCodes.UNAUTHORIZED);
