@@ -1,11 +1,12 @@
 'use client';
 
-import { FC } from 'react';
+import { FC, Suspense } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useSession } from 'next-auth/react';
 import { motion } from 'framer-motion';
+import { AddToFavoritesButton } from '@/components/add-to-favorites-button/add-to-favorites-button';
 import { Product } from '@/types';
-//import { useSession } from 'next-auth/react';
 
 type ProductCardProps = {
   product: Product;
@@ -13,7 +14,7 @@ type ProductCardProps = {
 
 export const ProductCard: FC<ProductCardProps> = ({ product }) => {
   const { id, name, price, image } = product;
-  //const { data: session } = useSession();
+  const { data: session } = useSession();
 
   return (
     <div className="flex flex-col items-center">
@@ -36,7 +37,12 @@ export const ProductCard: FC<ProductCardProps> = ({ product }) => {
         >
           {name}
         </h5>
-        {/* {session && <AddToFavoritesButton product={product} />} */}
+
+        {session && (
+          <Suspense>
+            <AddToFavoritesButton product={product} />
+          </Suspense>
+        )}
       </div>
       <p className="text-2xl small:text-sm">price: {price}</p>
     </div>

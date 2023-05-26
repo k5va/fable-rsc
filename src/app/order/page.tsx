@@ -1,17 +1,14 @@
-'use client';
-
-import { QueryClientProvider } from 'react-query';
-import { queryClient } from '@/api';
 import { Container } from '@/components/container/container';
 import { ProductOrderList } from '@/components/product-order-list/product-order-list';
 import { ProductOrderSummary } from '@/components/product-order-summary/product-order-summary';
 import { PromocodeForm } from '@/components/promocode-form/promocode-form';
 import { OrderForm } from '@/components/order-form/order-form';
 import { OrderContextProvider } from './context/order-context';
+import { QueryProvider } from '@/components/query-provider/query-provider';
 
 export default function Order() {
   return (
-    <QueryClientProvider client={queryClient}>
+    <QueryProvider>
       <OrderContextProvider>
         <Container>
           <section
@@ -48,6 +45,6 @@ export default function Order() {
           </section>
         </Container>
       </OrderContextProvider>
-    </QueryClientProvider>
+    </QueryProvider>
   );
 }
